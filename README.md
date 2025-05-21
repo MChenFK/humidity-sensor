@@ -1,10 +1,10 @@
 # humidity-sensor
 
 Humidity sensor demo
-Hardware:
+## Hardware:
 - Arduino micro
 - Sht31 humidity sensor
 
-Software
+## Software
 - Arduino IDE
 - PLX DAQ Excel macro
