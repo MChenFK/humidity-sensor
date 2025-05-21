@@ -75,10 +75,12 @@ void loop() {
     Serial.println("Failed to read humidity");
   }
 
+  // Seconds between readings
   delay(1000);
 
   // Toggle heater enabled state every 30 seconds
   // An ~3.0 degC temperature increase can be noted when heater is enabled
+  /*
   if (loopCnt >= 30) {
     enableHeater = !enableHeater;
     sht31.heater(enableHeater);
@@ -89,8 +91,10 @@ void loop() {
       else
         Serial.println("DISABLED");
     }
+    
 
     loopCnt = 0;
   }
   loopCnt++;
+  */
 }
