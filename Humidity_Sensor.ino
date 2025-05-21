@@ -6,10 +6,6 @@ bool PLX_flag = true;
 bool enableHeater = false;
 uint8_t loopCnt = 0;
 
-char label1[] = "time (ms)";
-char label2[] = "temp (C)";
-char label3[] = "humidity (%)";
-
 Adafruit_SHT31 sht31 = Adafruit_SHT31();
 
 void setup() {
@@ -39,9 +35,7 @@ void setup() {
   }
 
   if (PLX_flag) {
-    //char buffer[] = "";
-    //sprintf (buffer, "LABEL, %s, %s, %s", label1, label2, label3);
-    Serial.println("LABEL, seconds, temp (C), humidity (%)");
+    Serial.println("LABEL, time, temp (C), humidity (%)");
   }
   
 }
@@ -49,9 +43,7 @@ void setup() {
 
 void loop() {
   if (PLX_flag) {
-    Serial.print("DATA, ");
-    Serial.print(millis() / 1000 - 10);
-    Serial.print(", ");
+    Serial.print("DATA,TIME,");
   }
   float t = sht31.readTemperature();
   float h = sht31.readHumidity();
